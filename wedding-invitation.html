@@ -600,16 +600,17 @@
     /* gallery */
     .gal {
       position: relative;
-      max-width: 440px;
+      max-width: min(70vw, 240px);
       margin: 0 auto;
       text-align: center;
     }
 
     .ph {
       overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 10px 32px rgba(70, 40, 50, .12);
-      background: var(--cream);
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(142, 56, 75, .12), 0 2px 8px rgba(0, 0, 0, .04);
+      background: #ffffff;
+      border: 4px solid #ffffff;
     }
 
     .ph img {
@@ -899,8 +900,6 @@
       phrase: "Insha Allah",
       date: { full: "2 January 2027", day: "Saturday", num: "02", month: "January 2027", dots: "02 • 01 • 2027", dotted: "02.01.2027", islamic: "25 Rajab 1448" },
       time: "11:30 AM",
-      afterCeremony: "Lunch",
-      afterCeremonyNote: "Followed by Lunch",
       venue: { name: "Grand Auditorium", place: "Kaipamangalam - 12", map: "https://www.google.com/maps/search/?api=1&query=Grand+Auditorium+Kaipamangalam" },
       tagline: "Insha Allah",
       invitationMessage: "In the name of Allah, the most beneficent and merciful.",
@@ -1013,12 +1012,6 @@
     <p class="small" style="margin-top:8px;font-size:1rem">${V.place}</p>
     <a href="${V.map}" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;font-size:.74rem;text-decoration:none">View on Google Maps &rarr;</a>
   </div>
-  <div class="rule line-x r" style="margin:32px auto"></div>
-  <div class="r">
-    <p class="label" style="margin-bottom:12px">After Ceremony</p>
-    <h2 class="big" style="font-size:clamp(1.7rem,5vw,2.3rem)">${W.afterCeremony}</h2>
-    <p class="note" style="margin-top:10px">${W.afterCeremonyNote}</p>
-  </div>
 </div></section>
 
 <section class="alt"><div class="wrap" style="max-width:880px">
@@ -1032,8 +1025,8 @@
   </div>
 </div></section>
 
-<section><div class="wrap" style="max-width:440px">
-  <p class="label r" style="margin-bottom:20px">Cherished Memories</p>
+<section><div class="wrap" style="max-width:320px">
+  <p class="label r" style="margin-bottom:20px">Cherished Moments</p>
   <div class="gal">
     <div class="ph ga r"><img src="${PHOTOS.b}" alt="Hannath and Roshan" loading="lazy" decoding="async"></div>
   </div>
