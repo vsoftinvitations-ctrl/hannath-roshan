@@ -690,6 +690,67 @@
       font-size: 1.6rem;
       margin-top: 8px
     }
+    /* countdown */
+    .cd-box {
+      margin-top: 24px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(8px, 2.5vw, 16px);
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .cd-card {
+      flex: 1;
+      min-width: 60px;
+      max-width: 82px;
+      padding: clamp(10px, 2.5vw, 14px) clamp(4px, 1.5vw, 10px);
+      background: rgba(253, 242, 245, 0.7);
+      border: 1px solid var(--gold-soft);
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(168, 88, 105, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: transform .2s ease;
+    }
+
+    .cd-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+    }
+
+    .cd-val {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 6vw, 2.3rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    .cd-lbl {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+
+    .cd-celebrate {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--gold);
+      letter-spacing: .1em;
+    }
+
 
     .pin {
       width: 22px;
@@ -901,6 +962,27 @@
   <div class="rule line-x r"></div>
   <div class="time r">${W.time}</div>
   <div class="small r" style="margin-top:6px">${D.islamic}</div>
+  <div class="cd-box r">
+    <p class="label" style="margin:28px 0 16px;font-size:.65rem">Counting down to forever</p>
+    <div class="countdown" id="countdown">
+      <div class="cd-card">
+        <span class="cd-val" id="cd-days">00</span>
+        <span class="cd-lbl">Days</span>
+      </div>
+      <div class="cd-card">
+        <span class="cd-val" id="cd-hours">00</span>
+        <span class="cd-lbl">Hours</span>
+      </div>
+      <div class="cd-card">
+        <span class="cd-val" id="cd-mins">00</span>
+        <span class="cd-lbl">Mins</span>
+      </div>
+      <div class="cd-card">
+        <span class="cd-val" id="cd-secs">00</span>
+        <span class="cd-lbl">Secs</span>
+      </div>
+    </div>
+  </div>
 </div></section>
 
 <section><div class="wrap">
@@ -970,6 +1052,40 @@
 </div>` }
     document.getElementById('fmono').textContent = W.footMono;
     document.getElementById('fdate').textContent = D.dotted;
+    /* ===== Countdown Timer ===== */
+    const targetDate = new Date("2027-01-02T11:30:00+05:30").getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      const daysEl = document.getElementById('cd-days');
+      const hoursEl = document.getElementById('cd-hours');
+      const minsEl = document.getElementById('cd-mins');
+      const secsEl = document.getElementById('cd-secs');
+
+      if (!daysEl) return;
+
+      if (diff <= 0) {
+        const cdContainer = document.getElementById('countdown');
+        if (cdContainer) {
+          cdContainer.innerHTML = '<div class="cd-celebrate">Celebrating Together Today!</div>';
+        }
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      daysEl.textContent = String(days).padStart(2, '0');
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minsEl.textContent = String(mins).padStart(2, '0');
+      secsEl.textContent = String(secs).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
     /* ===== Scroll reveal ===== */
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: .15, rootMargin: '0px 0px -6% 0px' });
 
