@@ -12,7 +12,8 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hannath & Roshan Wedding">
   <meta property="og:title" content="Hannath & Roshan — Wedding Invitation">
-  <meta property="og:description" content="You are invited to the Nikah Ceremony of Hannath & Roshan on 2 January 2027.">
+  <meta property="og:description"
+    content="You are invited to the Nikah Ceremony of Hannath & Roshan on 2 January 2027.">
   <meta property="og:image" content="/image.png">
   <meta property="og:image:secure_url" content="/image.png">
   <meta property="og:image:type" content="image/png">
@@ -23,7 +24,8 @@
   <!-- Twitter / X Card Preview -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hannath & Roshan — Wedding Invitation">
-  <meta name="twitter:description" content="You are invited to the Nikah Ceremony of Hannath & Roshan on 2 January 2027.">
+  <meta name="twitter:description"
+    content="You are invited to the Nikah Ceremony of Hannath & Roshan on 2 January 2027.">
   <meta name="twitter:image" content="/image.png">
 
   <!-- General / Fallback Preview -->
@@ -31,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=Great+Vibes&family=Pinyon+Script&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=Great+Vibes&family=Pinyon+Script&display=swap"
     rel="stylesheet">
   <style>
     @font-face {
@@ -408,7 +410,7 @@
       color: var(--gold)
     }
 
-        /* hero / preloader */
+    /* hero / preloader */
     #hero {
       min-height: 100vh;
       min-height: 100svh;
@@ -433,51 +435,42 @@
       margin-top: -30px;
     }
 
-    .hero-ring-wrap {
-      width: min(48vw, 180px);
-      height: min(48vw, 180px);
-      margin: 0 auto 26px;
-      display: flex;
-      align-items: center;
+    .hero-monogram {
+      display: inline-flex;
+      align-items: baseline;
       justify-content: center;
+      gap: 0.12em;
+      margin: 0 auto 28px;
+      line-height: 1;
+      filter: drop-shadow(0 2px 10px rgba(142, 56, 75, 0.1));
+      animation: breatheMono 4.5s ease-in-out infinite;
+      user-select: none;
+    }
+
+    .hero-monogram .mono-letter {
+      font-family: 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(3.6rem, 13vw, 5rem);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #8e384b;
+      font-optical-sizing: auto;
+    }
+
+    .hero-monogram .mono-amp {
+      font-family: 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(2.4rem, 8.5vw, 3.4rem);
+      font-weight: 400;
+      color: #b4733c;
+      margin: 0 0.04em;
       position: relative;
-    }
-
-    .hero-ring-svg {
-      width: 100%;
-      height: 100%;
-      overflow: visible;
-      filter: drop-shadow(0 4px 16px rgba(142, 56, 75, 0.16));
-    }
-
-    .diamond-pulse {
-      transform-origin: 100px 38px;
-      animation: sparkleGlint 2.8s ease-in-out infinite;
-    }
-
-    .monogram-breathe {
-      transform-origin: 100px 106px;
-      animation: breatheMono 4s ease-in-out infinite;
-    }
-
-    .ring-draw {
-      stroke-dasharray: 440;
-      stroke-dashoffset: 440;
-      animation: drawCircle 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    }
-
-    @keyframes sparkleGlint {
-      0%, 100% { transform: scale(1); opacity: 0.9; }
-      50% { transform: scale(1.18); opacity: 1; filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.8)); }
+      top: -0.05em;
+      font-optical-sizing: auto;
     }
 
     @keyframes breatheMono {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-    }
-
-    @keyframes drawCircle {
-      to { stroke-dashoffset: 0; }
+      50% { transform: scale(1.025); }
     }
 
     .hero-names {
@@ -715,6 +708,7 @@
       font-size: 1.6rem;
       margin-top: 8px
     }
+
     /* countdown */
     .cd-box {
       margin-top: 24px;
@@ -937,52 +931,10 @@
     document.getElementById('app').innerHTML = `
 <section id="hero">
   <div class="hero-content">
-    <div class="hero-ring-wrap" aria-label="Hannath &amp; Roshan Monogram">
-      <svg class="hero-ring-svg" viewBox="0 0 200 200" fill="none">
-        <defs>
-          <linearGradient id="goldGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#b4733c" />
-            <stop offset="30%" stop-color="#e5a9b6" />
-            <stop offset="60%" stop-color="#8e384b" />
-            <stop offset="100%" stop-color="#c59d5f" />
-          </linearGradient>
-          <linearGradient id="gemGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff" />
-            <stop offset="50%" stop-color="#fdf1f4" />
-            <stop offset="100%" stop-color="#b4733c" />
-          </linearGradient>
-        </defs>
-
-        <!-- Main Wedding Band Ring -->
-        <circle class="ring-draw" cx="100" cy="105" r="70" stroke="url(#goldGradHero)" stroke-width="2" />
-
-        <!-- Sparkling Diamond on Top -->
-        <g class="diamond-pulse">
-          <polygon points="100,28 107,37 100,47 93,37" fill="url(#gemGradHero)" stroke="#8e384b" stroke-width="1" />
-          <line x1="93" y1="37" x2="107" y2="37" stroke="#ffffff" stroke-width="0.8" />
-          <polygon points="100,28 103,37 100,47 97,37" fill="#ffffff" opacity="0.6" />
-          <circle cx="93" cy="37" r="1.5" fill="#8e384b" />
-          <circle cx="107" cy="37" r="1.5" fill="#8e384b" />
-          <line x1="100" y1="23" x2="100" y2="18" stroke="#8e384b" stroke-width="1.2" stroke-linecap="round" />
-          <line x1="100" y1="52" x2="100" y2="57" stroke="#8e384b" stroke-width="1.2" stroke-linecap="round" />
-          <line x1="86" y1="37.5" x2="81" y2="37.5" stroke="#8e384b" stroke-width="1.2" stroke-linecap="round" />
-          <line x1="114" y1="37.5" x2="119" y2="37.5" stroke="#8e384b" stroke-width="1.2" stroke-linecap="round" />
-          <circle cx="100" cy="37" r="2" fill="#fff" />
-        </g>
-
-        <!-- Laurel / Floral Base Curve -->
-        <g stroke="#8e384b" stroke-width="0.9" fill="none" opacity="0.55" stroke-linecap="round">
-          <path d="M82,143 C90,148 95,149 100,149 C105,149 110,148 118,143" />
-          <circle cx="100" cy="149" r="1.5" fill="#b4733c" />
-        </g>
-
-        <!-- Monogram Letters H & R -->
-        <g class="monogram-breathe">
-          <text x="77" y="116" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="500" fill="#8e384b" text-anchor="middle">H</text>
-          <text x="100" y="113" font-family="'Brittany Signature', 'Alex Brush', cursive" font-size="30" fill="#b4733c" text-anchor="middle">&amp;</text>
-          <text x="123" y="116" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="500" fill="#8e384b" text-anchor="middle">R</text>
-        </g>
-      </svg>
+    <div class="hero-monogram" aria-label="Hannath &amp; Roshan Monogram">
+      <span class="mono-letter">H</span>
+      <span class="mono-amp">&amp;</span>
+      <span class="mono-letter">R</span>
     </div>
     <div class="hero-names">
       <span>HANNATH &amp;</span>
