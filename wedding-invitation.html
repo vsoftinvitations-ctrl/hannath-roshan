@@ -408,7 +408,7 @@
       color: var(--gold)
     }
 
-    /* hero */
+        /* hero / preloader */
     #hero {
       min-height: 100vh;
       min-height: 100svh;
@@ -416,99 +416,86 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 32px 24px;
-      background: var(--ivory)
-    }
-
-    #hero::before {
-      content: "";
-      position: absolute;
-      inset: 16px;
-      border: 1px solid var(--gold-soft);
-      pointer-events: none
-    }
-
-    #hero::after {
-      content: "";
-      position: absolute;
-      inset: 22px;
-      border: 1px solid rgba(168, 88, 105, .25);
-      pointer-events: none
-    }
-
-    .mono {
-      width: 64px;
-      height: 64px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      letter-spacing: .2em;
-      color: var(--gold);
-      margin-bottom: 34px;
-      padding-left: .2em
-    }
-
-    .date {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      letter-spacing: .14em;
-      margin-top: 34px
-    }
-
-    .day {
-      font-size: .7rem;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-      color: var(--mute);
-      margin-top: 2px
-    }
-
-    .tag {
-      margin: 28px 0 38px;
-      color: var(--mute);
-      font-size: .9rem
-    }
-
-    .btn {
-      display: inline-block;
+      padding: 32px 24px 90px;
       background: var(--ivory);
-      color: var(--ink);
-      border: 1px solid var(--gold);
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      transition: opacity .9s ease, visibility .9s;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: -30px;
+    }
+
+    .hero-monogram {
+      width: min(50vw, 210px);
+      max-width: 210px;
+      margin: 0 auto 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-monogram img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 4px 12px rgba(158, 74, 93, 0.12));
+    }
+
+    .hero-names {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--sans);
+      font-size: clamp(0.78rem, 2.6vw, 0.92rem);
+      font-weight: 500;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: #8e384b;
+      line-height: 1.7;
+    }
+
+    .hero-names span {
+      display: block;
+      padding-left: .3em;
+    }
+
+    .hero-btn {
+      position: absolute;
+      bottom: clamp(36px, 8vh, 56px);
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid #8e384b;
+      color: #8e384b;
+      padding: 13px 38px;
       border-radius: 999px;
-      padding: 14px 34px;
-      font: 400 .72rem var(--sans);
-      letter-spacing: .28em;
+      font-family: var(--sans);
+      font-size: .75rem;
+      letter-spacing: .26em;
       text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
       min-height: 44px;
-      transition: transform .35s ease, background .35s ease, border-color .35s ease
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .3s ease;
     }
 
-    .btn:hover {
-      background: #fff;
-      transform: scale(1.03);
-      border-color: var(--ink)
-    }
-
-    .btn:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 3px
-    }
-
-    #hero {
-      position: fixed;
-      inset: 0;
-      z-index: 20;
-      transition: opacity .9s ease, visibility .9s
-    }
-
-    #hero.leaving {
-      opacity: 0;
-      visibility: hidden
+    .hero-btn:hover {
+      background: #8e384b;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(142, 56, 75, 0.25);
     }
 
     .arch {
@@ -911,12 +898,16 @@
     const D = W.date, V = W.venue;
     document.getElementById('app').innerHTML = `
 <section id="hero">
-  <div class="arch seq" style="--i:0"><img src="${PHOTOS.b}" alt="Hannath and Roshan" decoding="async"></div>
-  <h1 class="names"><span class="seq" style="--i:1;display:block">${W.brideFirst}</span><span class="amp seq" style="--i:2">&amp;</span><span class="seq" style="--i:3;display:block">${W.groomFirst}</span></h1>
-  <div class="date seq" style="--i:4">${D.full}</div>
-  <div class="day seq" style="--i:4">${D.day}</div>
-  <p class="tag seq" style="--i:5">${W.phrase}</p>
-  <a class="btn seq" style="--i:6" href="#intro">Open Invitation</a>
+  <div class="hero-content">
+    <div class="hero-monogram" aria-hidden="true">
+      <img src="monogram.png" alt="H&R Monogram" decoding="async">
+    </div>
+    <div class="hero-names">
+      <span>HANNATH &amp;</span>
+      <span>ROSHAN RAFEEK</span>
+    </div>
+  </div>
+  <a class="btn hero-btn" href="#intro">Tap to open</a>
 </section>
 
 <section id="intro">
