@@ -1,6 +1,6 @@
-# Roshan Rafeek & Hasnath — Wedding Invitation
+# Roshan Rafeek & Hannath — Wedding Invitation
 
-Wedding invitation web application for the Nikah Ceremony of Roshan Rafeek & Hasnath.
+Wedding invitation web application for the Nikah Ceremony of Roshan Rafeek & Hannath.
 
 ## Details
 - **Function**: Nikah Ceremony
