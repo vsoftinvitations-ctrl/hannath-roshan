@@ -593,17 +593,16 @@
     /* gallery */
     .gal {
       position: relative;
-      max-width: 500px;
+      max-width: 440px;
       margin: 0 auto;
-      padding-bottom: 26%;
-      text-align: left
+      text-align: center;
     }
 
     .ph {
       overflow: hidden;
-      border-radius: 6px;
-      box-shadow: 0 8px 28px rgba(70, 40, 50, .12);
-      background: var(--cream)
+      border-radius: 8px;
+      box-shadow: 0 10px 32px rgba(70, 40, 50, .12);
+      background: var(--cream);
     }
 
     .ph img {
@@ -611,35 +610,23 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(1.03);
-      transition: transform 2.6s ease
+      transform: scale(1.02);
+      transition: transform 2.6s ease;
     }
 
     .in.ph img,
     .in .ph img {
-      transform: none
+      transform: none;
     }
 
     .ga {
-      width: 80%;
-      aspect-ratio: 4/5
+      width: 100%;
+      aspect-ratio: 3/4;
+      margin: 0 auto;
     }
 
     .ga img {
-      object-position: 50% 28%
-    }
-
-    .gb {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 54%;
-      aspect-ratio: 3/4;
-      border: 6px solid var(--ivory)
-    }
-
-    .gb img {
-      object-position: 50% 36%
+      object-position: 50% 50%;
     }
 
     @media(prefers-reduced-motion:reduce) {
@@ -1049,10 +1036,9 @@
   <div class="rule line-x r"></div>
 </div></section>
 
-<section><div class="wrap" style="max-width:560px">
+<section><div class="wrap" style="max-width:480px">
   <div class="gal">
-    <div class="ph ga r"><img src="${PHOTOS.a}" alt="Hannath and Roshan" loading="lazy" decoding="async"></div>
-    <div class="ph gb r"><img src="${PHOTOS.b}" alt="Hannath and Roshan childhood portrait" loading="lazy" decoding="async"></div>
+    <div class="ph ga r"><img src="${PHOTOS.b}" alt="Hannath and Roshan" loading="lazy" decoding="async"></div>
   </div>
 </div></section>
 
