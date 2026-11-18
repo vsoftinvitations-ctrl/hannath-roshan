@@ -498,6 +498,13 @@
       box-shadow: 0 8px 24px rgba(142, 56, 75, 0.25);
     }
 
+    #hero.leaving {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transition: opacity .8s ease, visibility .8s;
+    }
+
     .arch {
       width: min(34vw, 160px, calc(22svh*.75));
       aspect-ratio: 3/4;
@@ -1088,7 +1095,13 @@
       if (opened) return; opened = true;
       document.documentElement.style.overflow = ''; document.body.style.overflow = '';
       scrollTo(0, 0);
-      document.getElementById('hero').classList.add('leaving');
+      const hero = document.getElementById('hero');
+      if (hero) {
+        hero.classList.add('leaving');
+        setTimeout(() => {
+          hero.style.display = 'none';
+        }, 850);
+      }
       document.querySelectorAll('.r').forEach(el => io.observe(el));
       playAudio();
       setTimeout(() => {
@@ -1096,7 +1109,15 @@
         if (inames) inames.classList.add('in');
       }, 450);
     }
-    document.querySelector('#hero .btn').addEventListener('click', e => { e.preventDefault(); openInvite() });
+    const heroBtn = document.querySelector('#hero .btn');
+    if (heroBtn) {
+      heroBtn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); openInvite(); });
+      heroBtn.addEventListener('touchend', e => { e.preventDefault(); e.stopPropagation(); openInvite(); });
+    }
+    const heroEl = document.getElementById('hero');
+    if (heroEl) {
+      heroEl.addEventListener('click', () => openInvite());
+    }
 
     /* ===== Background Music Playback ===== */
     const audio = document.getElementById('wedding-audio');
