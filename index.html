@@ -450,16 +450,6 @@
       filter: drop-shadow(0 4px 16px rgba(142, 56, 75, 0.16));
     }
 
-    .orbit-spin {
-      transform-origin: 100px 105px;
-      animation: spinOrbit 22s linear infinite;
-    }
-
-    .orbit-spin-reverse {
-      transform-origin: 100px 105px;
-      animation: spinOrbitRev 16s linear infinite;
-    }
-
     .diamond-pulse {
       transform-origin: 100px 38px;
       animation: sparkleGlint 2.8s ease-in-out infinite;
@@ -474,16 +464,6 @@
       stroke-dasharray: 440;
       stroke-dashoffset: 440;
       animation: drawCircle 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    }
-
-    @keyframes spinOrbit {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes spinOrbitRev {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
     }
 
     @keyframes sparkleGlint {
