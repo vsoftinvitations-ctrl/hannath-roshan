@@ -4,26 +4,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Roshan & Hannath — Wedding Invitation</title>
-  <meta name="description" content="You are invited to the Nikah Ceremony of Roshan & Hannath on 2 January 2027.">
+  <title>Hannath & Roshan — Wedding Invitation</title>
+  <meta name="description" content="You are invited to the Nikah Ceremony of Hannath & Roshan on 2 January 2027.">
   <meta name="color-scheme" content="light">
 
   <!-- Social Media & Messaging Preview (WhatsApp, Instagram, Facebook, iMessage) -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Roshan & Hannath Wedding">
-  <meta property="og:title" content="Roshan & Hannath — Wedding Invitation">
-  <meta property="og:description" content="You are invited to the Nikah Ceremony of Roshan & Hannath on 2 January 2027.">
+  <meta property="og:site_name" content="Hannath & Roshan Wedding">
+  <meta property="og:title" content="Hannath & Roshan — Wedding Invitation">
+  <meta property="og:description" content="You are invited to the Nikah Ceremony of Hannath & Roshan on 2 January 2027.">
   <meta property="og:image" content="/image.png">
   <meta property="og:image:secure_url" content="/image.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1178">
   <meta property="og:image:height" content="1599">
-  <meta property="og:image:alt" content="Roshan & Hannath Wedding Invitation">
+  <meta property="og:image:alt" content="Hannath & Roshan Wedding Invitation">
 
   <!-- Twitter / X Card Preview -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Roshan & Hannath — Wedding Invitation">
-  <meta name="twitter:description" content="You are invited to the Nikah Ceremony of Roshan & Hannath on 2 January 2027.">
+  <meta name="twitter:title" content="Hannath & Roshan — Wedding Invitation">
+  <meta name="twitter:description" content="You are invited to the Nikah Ceremony of Hannath & Roshan on 2 January 2027.">
   <meta name="twitter:image" content="/image.png">
 
   <!-- General / Fallback Preview -->
@@ -207,24 +207,24 @@
       stroke-dashoffset: 320;
     }
 
-    .intro-names.in .script-groom .script-text {
-      animation: writeGroom 1.7s cubic-bezier(.35, 0, .25, 1) .3s forwards;
-    }
-
-    .intro-names.in .script-groom .calligraphy-spark {
-      animation: sparkMoveGroom 1.7s cubic-bezier(.35, 0, .25, 1) .3s forwards;
-    }
-
-    .intro-names.in .script-amp .amp {
-      animation: revealAmp .7s cubic-bezier(.34, 1.56, .64, 1) 1.8s forwards;
-    }
-
     .intro-names.in .script-bride .script-text {
-      animation: writeBride 1.5s cubic-bezier(.35, 0, .25, 1) 2.3s forwards;
+      animation: writeBride 1.5s cubic-bezier(.35, 0, .25, 1) .3s forwards;
     }
 
     .intro-names.in .script-bride .calligraphy-spark {
-      animation: sparkMoveBride 1.5s cubic-bezier(.35, 0, .25, 1) 2.3s forwards;
+      animation: sparkMoveBride 1.5s cubic-bezier(.35, 0, .25, 1) .3s forwards;
+    }
+
+    .intro-names.in .script-amp .amp {
+      animation: revealAmp .7s cubic-bezier(.34, 1.56, .64, 1) 1.6s forwards;
+    }
+
+    .intro-names.in .script-groom .script-text {
+      animation: writeGroom 1.7s cubic-bezier(.35, 0, .25, 1) 2.1s forwards;
+    }
+
+    .intro-names.in .script-groom .calligraphy-spark {
+      animation: sparkMoveGroom 1.7s cubic-bezier(.35, 0, .25, 1) 2.1s forwards;
     }
 
     .intro-names.in .flourish-path {
@@ -880,8 +880,8 @@
   <script>
     /* ===== Central wedding data — edit here only ===== */
     const W = {
-      bride: "Hannath", groom: "Roshan Rafeek", brideFirst: "Hannath", groomFirst: "Roshan", monogram: "R • H", footMono: "R & H",
-      short: "Roshan & Hannath",
+      bride: "Hannath", groom: "Roshan Rafeek", brideFirst: "Hannath", groomFirst: "Roshan", monogram: "H • R", footMono: "H & R",
+      short: "Hannath & Roshan",
       function: "Nikah Ceremony",
       phrase: "Insha Allah",
       date: { full: "2 January 2027", day: "Saturday", num: "02", month: "January 2027", dots: "02 • 01 • 2027", dotted: "02.01.2027", islamic: "25 Rajab 1448" },
@@ -897,8 +897,8 @@
       ],
       invite: "We cordially invite your gracious presence, prayers, and blessings on the auspicious occasion of the Nikah ceremony of our children.",
       families: [
-        { title: "Groom's Family", names: "Mr. Rafeek K & Mrs. Nabeera Rafeek", lines: ["Kombathayil House", "Kotiyapadi, Guruvayur"] },
-        { title: "Bride's Family", names: "Mr. Abdul Razak & Mrs. Rahmath Abdul Razak", lines: ["Kolathumparambil House", "Chentrapinni P.O."] }
+        { title: "Bride's Family", names: "Mr. Abdul Razak & Mrs. Rahmath Abdul Razak", lines: ["Kolathumparambil House", "Chentrapinni P.O."] },
+        { title: "Groom's Family", names: "Mr. Rafeek K & Mrs. Nabeera Rafeek", lines: ["Kombathayil House", "Kotiyapadi, Guruvayur"] }
       ],
       compliments: ["Family & Friends"],
       closingLabel: "Sharing the Happiness",
@@ -912,7 +912,7 @@
     document.getElementById('app').innerHTML = `
 <section id="hero">
   <div class="arch seq" style="--i:0"><img src="${PHOTOS.b}" alt="Hannath and Roshan" decoding="async"></div>
-  <h1 class="names"><span class="seq" style="--i:1;display:block">${W.groomFirst}</span><span class="amp seq" style="--i:2">&amp;</span><span class="seq" style="--i:3;display:block">${W.brideFirst}</span></h1>
+  <h1 class="names"><span class="seq" style="--i:1;display:block">${W.brideFirst}</span><span class="amp seq" style="--i:2">&amp;</span><span class="seq" style="--i:3;display:block">${W.groomFirst}</span></h1>
   <div class="date seq" style="--i:4">${D.full}</div>
   <div class="day seq" style="--i:4">${D.day}</div>
   <p class="tag seq" style="--i:5">${W.phrase}</p>
@@ -923,16 +923,16 @@
   <div class="cover r"><img src="${PHOTOS.a}" alt="Roshan and Hannath" decoding="async"></div>
   <div class="wrap">
     <p class="label r">Together with their families</p>
-    <h2 class="intro-names r" aria-label="${W.groom} & ${W.bride}">
-      <div class="script-line script-groom">
-        <span class="script-text">${W.groom}</span>
+    <h2 class="intro-names r" aria-label="${W.bride} & ${W.groom}">
+      <div class="script-line script-bride">
+        <span class="script-text">${W.bride}</span>
         <span class="calligraphy-spark" aria-hidden="true"></span>
       </div>
       <div class="script-line script-amp" aria-hidden="true">
         <span class="amp">&amp;</span>
       </div>
-      <div class="script-line script-bride">
-        <span class="script-text">${W.bride}</span>
+      <div class="script-line script-groom">
+        <span class="script-text">${W.groom}</span>
         <span class="calligraphy-spark" aria-hidden="true"></span>
       </div>
       <div class="flourish-wrap" aria-hidden="true">

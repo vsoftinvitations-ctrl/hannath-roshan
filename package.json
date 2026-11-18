@@ -1,7 +1,7 @@
 {
-  "name": "roshan-hannath-wedding",
+  "name": "hannath-roshan-wedding",
   "version": "1.0.0",
-  "description": "Wedding Invitation of Roshan & Hannath",
+  "description": "Wedding Invitation of Hannath & Roshan",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
