@@ -83,13 +83,13 @@
     }
 
     section {
-      padding: clamp(72px, 14vw, 140px) 24px;
+      padding: clamp(44px, 8vw, 76px) 24px;
       text-align: center;
       position: relative
     }
 
     .wrap {
-      max-width: 560px;
+      max-width: 580px;
       margin: 0 auto
     }
 
@@ -99,7 +99,7 @@
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 400;
-      margin: 0 0 28px
+      margin: 0 0 20px
     }
 
     h1,
@@ -397,12 +397,12 @@
       height: 1px;
       width: 64px;
       background: var(--gold);
-      margin: 36px auto
+      margin: 24px auto
     }
 
     .orn {
       display: block;
-      margin: 36px auto;
+      margin: 24px auto;
       width: 150px;
       height: 18px;
       color: var(--gold)
@@ -773,9 +773,9 @@
     /* families */
     .fam {
       display: grid;
-      gap: 56px;
+      gap: 36px;
       max-width: 860px;
-      margin: 56px auto 0
+      margin: 32px auto 0
     }
 
     .fam h3 {
@@ -959,7 +959,8 @@
       </div>
     </h2>
     ${orn}
-    <p class="quote r">“${W.invitationMessage}”</p>
+    <p class="quote r" style="font-size:1.25rem;margin-bottom:14px">“${W.invitationMessage}”</p>
+    <p class="body r" style="max-width:520px;margin:0 auto;line-height:1.8;font-size:1.02rem">${W.invite}</p>
   </div>
 </section>
 
@@ -967,12 +968,12 @@
   <p class="label r">${W.function}</p>
   <div class="daynum r">${D.num}</div>
   <div class="month r">${D.month.toUpperCase()}</div>
-  <div class="day r" style="margin-top:10px">${D.day}</div>
-  <div class="rule line-x r"></div>
+  <div class="day r" style="margin-top:8px">${D.day}</div>
+  <div class="rule line-x r" style="margin:20px auto"></div>
   <div class="time r">${W.time}</div>
-  <div class="small r" style="margin-top:6px">${D.islamic}</div>
+  <div class="small r" style="margin-top:6px">${D.islamic} &bull; ${W.tagline}</div>
   <div class="cd-box r">
-    <p class="label" style="margin:28px 0 16px;font-size:.65rem">Counting down to forever</p>
+    <p class="label" style="margin:24px 0 14px;font-size:.65rem">Counting down to forever</p>
     <div class="countdown" id="countdown">
       <div class="cd-card">
         <span class="cd-val" id="cd-days">00</span>
@@ -994,31 +995,25 @@
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <p class="label r">The venue</p>
-  <a href="${V.map}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
-    <div class="r">${pin}</div>
-    <h2 class="big r">${V.name}</h2>
-    <p class="small r" style="margin-top:10px;font-size:1rem">${V.place}</p>
-    <p class="small r" style="margin-top:14px;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;font-size:.75rem">View on Google Maps &rarr;</p>
-  </a>
+<section><div class="wrap" style="max-width:560px">
+  <div class="r">
+    <p class="label" style="margin-bottom:14px">The venue</p>
+    <div>${pin}</div>
+    <h2 class="big" style="font-size:clamp(1.8rem,5.5vw,2.5rem)">${V.name}</h2>
+    <p class="small" style="margin-top:8px;font-size:1rem">${V.place}</p>
+    <a href="${V.map}" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;font-size:.74rem;text-decoration:none">View on Google Maps &rarr;</a>
+  </div>
+  <div class="rule line-x r" style="margin:32px auto"></div>
+  <div class="r">
+    <p class="label" style="margin-bottom:12px">After Ceremony</p>
+    <h2 class="big" style="font-size:clamp(1.7rem,5vw,2.3rem)">${W.afterCeremony}</h2>
+    <p class="note" style="margin-top:10px">${W.afterCeremonyNote}</p>
+  </div>
 </div></section>
 
-<section class="alt"><div class="wrap">
-  <p class="label r">After Ceremony</p>
-  <h2 class="big r" style="font-size:clamp(1.9rem,6vw,2.6rem)">${W.afterCeremony}</h2>
-  <div class="rule line-x r"></div>
-  <p class="note r">${W.afterCeremonyNote}</p>
-</div></section>
-
-<section><div class="wrap">
-  ${orn}
-  <p class="quote r" style="font-size:1.35rem;margin-bottom:18px">“${W.invitationMessage}”</p>
-  <p class="body r">${W.invite}</p>
-  ${orn}
-</div></section>
-
-<section class="alt"><div class="wrap" style="max-width:900px">
+<section class="alt"><div class="wrap" style="max-width:880px">
+  <p class="quote r" style="font-size:clamp(1.15rem, 3.6vw, 1.35rem);max-width:640px;margin:0 auto 28px;line-height:1.75">“${W.quotes[1]}”</p>
+  <div class="rule line-x r" style="margin:0 auto 32px"></div>
   <p class="label r">With the blessings of our families</p>
   <div class="fam">
     ${fam(W.families[0])}
@@ -1027,29 +1022,20 @@
   </div>
 </div></section>
 
-<section ><div class="wrap">
-  <div class="rule line-x r" style="margin-top:0"></div>
-  <p class="quote r">“${W.quotes[1]}”</p>
-  <div class="rule line-x r"></div>
-</div></section>
-
-<section><div class="wrap" style="max-width:480px">
+<section><div class="wrap" style="max-width:440px">
+  <p class="label r" style="margin-bottom:20px">Cherished Memories</p>
   <div class="gal">
     <div class="ph ga r"><img src="${PHOTOS.b}" alt="Hannath and Roshan" loading="lazy" decoding="async"></div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <p class="label r">${W.closingLabel}</p>
+<section style="padding-block:clamp(56px,11vw,96px)"><div class="wrap">
+  <h2 class="names r" style="font-size:clamp(2.4rem,9.5vw,3.8rem)">${W.short}</h2>
+  <p class="serif r" style="font-size:1.3rem;letter-spacing:.2em;margin-top:16px">${D.dots}</p>
+  <div class="rule line-x r" style="margin:24px auto"></div>
+  <p class="label r" style="margin-bottom:12px">${W.closingLabel}</p>
   <div class="comp r"><span>${W.closingMessage}</span></div>
-</div></section>
-
-<section style="padding-block:clamp(100px,22vw,200px)"><div class="wrap">
-  <h2 class="names r" style="font-size:clamp(2.2rem,9vw,3.4rem)">${W.short}</h2>
-  <p class="serif r" style="font-size:1.4rem;letter-spacing:.2em;margin-top:24px">${D.dots}</p>
-  <div class="rule line-x r"></div>
-  <p class="quote r">Sharing the Happiness: Family &amp; Friends.</p>
-  <p class="small r" style="margin-top:28px">With love and blessings</p>
+  <p class="small r" style="margin-top:22px;letter-spacing:.12em">With love and blessings</p>
   ${orn}
 </div></section>`;
     function fam(f) {
