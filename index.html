@@ -13,7 +13,8 @@
   <meta property="og:url" content="https://hannath-roshan.vercel.app/">
   <meta property="og:site_name" content="Hannath & Roshan Wedding">
   <meta property="og:title" content="Hannath & Roshan — Wedding Invitation">
-  <meta property="og:description" content="You are invited to the Nikah Ceremony of Hannath & Roshan on 2 January 2027.">
+  <meta property="og:description"
+    content="You are invited to the Nikah Ceremony of Hannath & Roshan on 2 January 2027.">
 
   <!-- WhatsApp (Mobile & Web) Portrait Preview -->
   <meta property="og:image" content="https://hannath-roshan.vercel.app/preview.jpeg">
@@ -36,7 +37,8 @@
   <meta name="twitter:domain" content="hannath-roshan.vercel.app">
   <meta name="twitter:url" content="https://hannath-roshan.vercel.app/">
   <meta name="twitter:title" content="Hannath & Roshan — Wedding Invitation">
-  <meta name="twitter:description" content="You are invited to the Nikah Ceremony of Hannath & Roshan on 2 January 2027.">
+  <meta name="twitter:description"
+    content="You are invited to the Nikah Ceremony of Hannath & Roshan on 2 January 2027.">
   <meta name="twitter:image" content="https://hannath-roshan.vercel.app/preview.jpeg">
   <meta name="twitter:image:alt" content="Hannath & Roshan Wedding Invitation">
 
@@ -425,7 +427,7 @@
       color: var(--gold)
     }
 
-        /* hero / preloader */
+    /* hero / preloader */
     #hero {
       min-height: 100vh;
       min-height: 100svh;
@@ -484,8 +486,15 @@
     }
 
     @keyframes breatheMono {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.025); }
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.025);
+      }
     }
 
     .hero-names {
@@ -711,6 +720,7 @@
       font-size: 1.6rem;
       margin-top: 8px
     }
+
     /* countdown */
     .cd-box {
       margin-top: 24px;
@@ -1123,7 +1133,15 @@
     const heroEl = document.getElementById('hero');
     if (heroEl) {
       heroEl.addEventListener('click', () => openInvite());
+      heroEl.addEventListener('touchend', () => openInvite(), { passive: true });
     }
+
+    /* Safety fallback: restore scroll if reopened or restored from cache */
+    window.addEventListener('pageshow', e => {
+      if (e.persisted || opened) {
+        openInvite();
+      }
+    });
 
     /* ===== Background Music Playback ===== */
     const audio = document.getElementById('wedding-audio');

@@ -1131,7 +1131,15 @@
     const heroEl = document.getElementById('hero');
     if (heroEl) {
       heroEl.addEventListener('click', () => openInvite());
+      heroEl.addEventListener('touchend', () => openInvite(), { passive: true });
     }
+
+    /* Safety fallback: restore scroll if reopened or restored from cache */
+    window.addEventListener('pageshow', e => {
+      if (e.persisted || opened) {
+        openInvite();
+      }
+    });
 
     /* ===== Background Music Playback ===== */
     const audio = document.getElementById('wedding-audio');
